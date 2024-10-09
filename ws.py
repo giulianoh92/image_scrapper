@@ -35,7 +35,7 @@ def fetch_products():
     
     try:
         cursor = conn.cursor()
-        cursor.execute("SELECT product_id, name FROM Products")
+        cursor.execute("SELECT product_id, name FROM Products WHERE image_path IS NULL")
         products = cursor.fetchall()
         return products
     except mysql.connector.Error as err:
